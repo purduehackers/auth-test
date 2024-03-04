@@ -13,7 +13,6 @@ export async function GET(req: Request) {
   const response = NextResponse.redirect(destinationUrl);
 
   if (code && code !== "") {
-    console.log({ code2: code });
     const resp = await fetch("https://id.purduehackers.com/api/token", {
       method: "POST",
       headers: {
@@ -27,7 +26,6 @@ export async function GET(req: Request) {
           "https://passport-auth-example.purduehackers.com/callback",
       }).toString(),
     }).then((r) => r.json());
-    console.log({ resp });
 
     if (resp["access_token"]) {
       const authDetails = resp as IDAuthResponse;
