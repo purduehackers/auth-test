@@ -23,7 +23,7 @@ export async function GET(req: Request) {
         code,
         client_id: "auth-test",
         redirect_uri:
-          "https://passport-auth-example.purduehackers.com/callback",
+          "https://passport-auth-example.purduehackers.com/api/callback",
       }).toString(),
     }).then((r) => r.json());
 
