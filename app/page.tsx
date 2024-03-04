@@ -17,7 +17,7 @@ export default function Home() {
     return (
       <main className="flex min-h-screen flex-col gap-4 items-center p-24">
         <h1 className="text-2xl font-bold">You&apos;re authenticated!</h1>
-        <p>{JSON.stringify(authObject, null, 2)}</p>
+        <pre>{JSON.stringify(authObject, null, 2)}</pre>
       </main>
     );
   } else {
