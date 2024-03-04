@@ -14,7 +14,7 @@ export async function GET(req: Request) {
 
   if (code && code !== "") {
     console.log({ code2: code });
-    const resp = await fetch("http://localhost:3001/api/token", {
+    const resp = await fetch("https://id.purduehackers.com/api/token", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -23,7 +23,8 @@ export async function GET(req: Request) {
         grant_type: "authorization_code",
         code,
         client_id: "auth-test",
-        redirect_uri: "http://localhost:3000/callback",
+        redirect_uri:
+          "https://passport-auth-example.purduehackers.com/callback",
       }).toString(),
     }).then((r) => r.json());
     console.log({ resp });

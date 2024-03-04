@@ -28,7 +28,7 @@ export default function Home() {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center p-24">
         <a
-          href="http://localhost:3001/api/authorize?client_id=auth-test&response_type=code"
+          href="htts://id.purduehackers.com/api/authorize?client_id=auth-test&response_type=code"
           className="border-2 rounded p-2 font-bold"
         >
           Sign in with passport
