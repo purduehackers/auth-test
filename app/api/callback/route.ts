@@ -12,6 +12,8 @@ export async function GET(req: Request) {
   const destinationUrl = new URL("/", new URL(req.url).origin);
   const response = NextResponse.redirect(destinationUrl);
 
+  console.log({ code, destinationUrl });
+
   if (code && code !== "") {
     const resp = await fetch("https://id.purduehackers.com/api/token", {
       method: "POST",
@@ -25,7 +27,11 @@ export async function GET(req: Request) {
         redirect_uri:
           "https://passport-auth-example.purduehackers.com/api/callback",
       }).toString(),
-    }).then((r) => r.json());
+    })
+      .then((r) => r.json())
+      .catch((err) => console.error("Error posting to id", err));
+
+    console.log({ resp });
 
     if (resp["access_token"]) {
       const authDetails = resp as IDAuthResponse;
