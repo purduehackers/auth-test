@@ -24,8 +24,7 @@ export async function GET(req: Request) {
         grant_type: "authorization_code",
         code,
         client_id: "auth-test",
-        redirect_uri:
-          "https://passport-auth-example.purduehackers.com/api/callback",
+        redirect_uri: "https://id-auth-example.purduehackers.com/api/callback",
       }).toString(),
     })
       .then((r) => r.json())
